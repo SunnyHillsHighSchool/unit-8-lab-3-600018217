@@ -368,7 +368,32 @@ public class Picture
 
    ////////////////////// methods ///////////////////////////////////////
 
-   
+  //Unit 8 Lab 3
+  //By Johnathan Mitri
+  public void sepiaTone()
+  {
+    //get the pixel array
+    Pixel[][] pixels = this.getPixels2D();
 
+    //for loop that goes for each row above the middle line
+    for (int i = 0; i < pixels.length; i++)
+    {
+      //for loop for every pixel in the row
+      for (int j = 0; j <  pixels[i].length; j++)
+      {
+        Pixel p = pixels[i][j];
+        int oRed = p.getRed();
+        int oGreen = p.getGreen();
+        int oBlue = p.getBlue();
+
+        p.setRed((int)((oRed * .393) + (oGreen *.769) + (oBlue * .189)));
+      
+        p.setGreen((int)((oRed * .349) + (oGreen *.686) + (oBlue * .168)));
+        p.setBlue((int)((oRed * .272) + (oGreen *.534) + (oBlue * .131)));
+
+      }
+    }
+  }
+  
 
 } // this } is the end of class Picture, put all new methods before this
